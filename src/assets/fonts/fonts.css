@@ -1,0 +1,18 @@
+
+@font-face {
+  font-family: "Roboto-Black";   /*Can be any text*/
+  src: local("Roboto-Black"), 
+  url("./Roboto-Black.ttf") format("truetype");
+}
+ 
+@font-face {
+  font-family: "Roboto-Medium";   /*Can be any text*/
+  src: local("Roboto-Medium"), 
+  url("./Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";   /*Can be any text*/
+  src: local("Roboto-Regular"), 
+  url("./Roboto-Regular.ttf") format("truetype");
+}
