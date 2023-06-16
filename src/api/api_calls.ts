@@ -5,12 +5,15 @@ const API_URL = "http://localhost:8080" + '/api'
 const VERIFY_COOKIES_ENDPOINT = "/verify-cookies"
 const AUTHORIZE_WITH_SPOTIFY_ENDPOINT = "/authorize-with-spotify"
 const GENRES_OF_TRACK_ENDPOINT = "/track-genres"
+const SEARCH_TRACKS_ENDPOINT = "/search-tracks"
+
+axios.defaults.baseURL = API_URL
 
 
 const axiosInstance = axios.create({
     baseURL: API_URL,
     headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
     withCredentials: true
 })
@@ -38,4 +41,8 @@ export const get_track_genres = async (track_id:string) => {
     const response = await axiosInstance.get(GENRES_OF_TRACK_ENDPOINT + "?track_id=" + track_id)
     return response
 
+}
+export const search_tracks = async (track_name: string) => {
+    const response = await axiosInstance.get(SEARCH_TRACKS_ENDPOINT + "?track_name=" +track_name)
+    return response
 }

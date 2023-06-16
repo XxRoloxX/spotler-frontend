@@ -4,10 +4,10 @@ import { RouterComponent } from "./pages/RouterComponent"
 
 const App = () => {
     return (
-        <React.StrictMode>
+        <>
             <RouterComponent />
             <GlobalStyle />
-        </React.StrictMode>
+        </>
     )
 
 }

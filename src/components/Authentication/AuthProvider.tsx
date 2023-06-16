@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { Component } from "react"
 import { verify_cookies } from "../../api/api_calls"
-import { Navigate } from "react-router-dom"
+import { Navigate, useLocation, useNavigate } from "react-router-dom"
 import { ROUTES } from "../../pages/RouterComponent"
 
 
@@ -23,19 +23,6 @@ export const AuthProvider = (props: { children: React.ReactNode }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
 
 
-    useEffect(() => {
-
-        verify_cookies().then(
-            (response) => {
-                if (response.data.is_cookie_active === true) {
-                    console.log("Cookie is active")
-                    setIsAuthenticated(true)
-                }
-            }
-        )
-
-    })
-
     const value = {
         isAuthenticated: isAuthenticated,
         handleAuthentication: setIsAuthenticated
@@ -51,10 +38,23 @@ export const AuthProvider = (props: { children: React.ReactNode }) => {
 
 export const ProtectedRoute = (props: { children: React.ReactNode }) => {
     const isAuthenticated = useAuth()
-    console.log("Cookies: "+isAuthenticated?.isAuthenticated)
-    if (!isAuthenticated?.isAuthenticated) {
-        return <Navigate to={ROUTES.WELCOME} replace={true} />
-    }
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        verify_cookies().then(
+            (response) => {
+                if (response.data.cookie_status == true) {
+                    isAuthenticated?.handleAuthentication(true)   
+                }
+                else{
+                    navigate(ROUTES.LOGIN)
+                }
+            }
+        )
+        console.log("USE EFFECT IN AUTH PROVIDER")
+
+    },[])
 
     return props.children
 }
