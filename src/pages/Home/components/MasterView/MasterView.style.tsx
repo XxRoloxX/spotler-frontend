@@ -5,7 +5,6 @@ export const MasterViewContainer = styled.div`
     flex-direction: column;
     min-width: 25rem;
     max-width: 50rem;
-    width: 40%;
     border-style: solid;
     border-color: white;
     border-width: 1px;

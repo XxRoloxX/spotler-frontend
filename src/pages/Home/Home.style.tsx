@@ -9,6 +9,7 @@ export const MainContainer = styled.div`
     margin-top:0;
     padding: 2rem;
     height: 90vh;
+    justify-content: center;
 `
 export const SearchTrackInfoButton = styled.button`
     border-radius: 1rem;

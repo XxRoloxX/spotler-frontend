@@ -5,7 +5,7 @@ export const DetailedViewContainer  = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:100%;
+    width:80vw;
     height: 100%;
     padding-bottom: 5rem;
     border-style: solid;
@@ -13,7 +13,3 @@ export const DetailedViewContainer  = styled.div`
     border-color: white;
 `
 
-export const DetailedViewTitle = styled.h1`
-    font-size: 2.5rem;
-
-`

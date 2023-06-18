@@ -24,7 +24,7 @@ export const UserProfileContainer = styled.div`
 
 export const UserAvatar = styled.img`
     border-radius: 50%;
-    margin: 0.2rem;
+    margin: 0.5rem;
     
 `
 export const UserName = styled.p`

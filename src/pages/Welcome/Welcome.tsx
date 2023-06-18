@@ -7,24 +7,6 @@ import { authorize_with_spotify, verify_cookies } from "../../api/api_calls";
 
 export const Welcome = () => {
 
-    useEffect(() => {
-        const queryset = new URLSearchParams(window.location.search)
-        const code = queryset.get('code')
-        console.log("RUN USEEFFECTS")
-        if (code) {
-            console.log(code)
-            authorize_with_spotify({ "code": code }).then(result => {
-                console.log("RESULTS: " + result)
-                window.location.href = ("/#" + ROUTES.HOME)
-            }).catch(err => { console.log("ERROR: " + err) })
-        }
-        else {
-            verify_cookies().then(result => { 
-                result.data.cookie_status == true ? window.location.href = ("/#" + ROUTES.HOME) : window.location.href })
-        }
-
-    }, [])
-
 
     return (
         <MainContainer>

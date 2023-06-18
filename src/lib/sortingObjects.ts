@@ -34,17 +34,24 @@ export const transpose2Darray = (array:any[][]) => {
     return newArray
 }
 
-export const zip = (a:any[], b:any[]) => {
-    if(a.length>b.length) {
-        return []
-    }
 
+export const zip = (arrays:any[][]) =>{
+    
     const resultArray = []
 
-    for(let i = 0; i < a.length; i++) {
-        resultArray.push([a[i], b[i]])
-    }
+    const minLength = Math.min(...arrays.map(a => a.length))
 
-    return resultArray
+    for(let i = 0; i < minLength; i++) {
+
+        resultArray.push([])
+
+        for(let j = 0; j < arrays.length; j++) {
+            (resultArray[resultArray.length-1] as any[]).push(arrays[j][i])
+        }
+    }
+    console.table(resultArray)
+    
+    return resultArray as any[][]
 
 }
+

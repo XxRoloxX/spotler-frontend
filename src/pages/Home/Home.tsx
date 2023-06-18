@@ -56,7 +56,7 @@ export const Home = () => {
             <UserNavbar/>
             <MainContainer>
                 <MasterView />
-                <DetailedView/>
+                {selectedTracks.length>0&& <DetailedView/>}
             </MainContainer>
             <Footer/>
         </SelectedTrackContext.Provider>

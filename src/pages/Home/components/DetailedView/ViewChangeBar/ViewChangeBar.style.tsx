@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import global_styles from "../../../../../assets/global-paramers.style";
 
-export const SelectionRowContainer = styled.div`
+export const ViewChangeBarContainer = styled.div`
     display: flex;
     flex-direction: row;
     height: 10rem;
@@ -10,9 +10,9 @@ export const SelectionRowContainer = styled.div`
     border-style: solid;
     border-width: 1px;
     border-color: white;
-    flex-grow: 1;
 `
-export const SelectionOptionsContainer = styled.div`
+export const ViewOptionsContainer = styled.div<{isActive:boolean}>`
+    display: flex;
     border-style: solid;
     border-width: 1px;
     border-color: white;
@@ -23,6 +23,7 @@ export const SelectionOptionsContainer = styled.div`
     height: 100%;
     text-align: center;
     cursor: pointer;
+    background-color: ${props => props.isActive? global_styles.green : "transparent"};
     &:hover{
         background-color: ${global_styles.green};
     }

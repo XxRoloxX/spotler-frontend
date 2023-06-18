@@ -1,5 +1,5 @@
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Routes,
 } from 'react-router-dom'
@@ -11,28 +11,16 @@ import React from 'react';
 import { Welcome } from './Welcome/Welcome';
 import { AuthProvider, ProtectedRoute } from '../components/Authentication/AuthProvider';
 import { RedirectFromSpotify } from './RedirectPages/RedirectFromSpotify';
+import { InfoPage } from './InfoPage/InfoPage';
 
 export enum ROUTES {
   WELCOME = "/",
   HOME = "/home",
   LOGIN = "/login",
-  REDIRECT = "/spotify-redirect"
+  REDIRECT = "/spotify-redirect",
+  INFO = '/info'
 }
 
-
-// export const RouterComponent = () => {
-//   return (
-//     <AuthProvider>
-//       <Router>
-//         <Routes>
-//           <Route path={ROUTES.WELCOME} element={<Welcome />} />
-//           <Route path={ROUTES.LOGIN} element={<Login />} />
-//           <Route path={ROUTES.HOME} element={<ProtectedRoute><Home/></ProtectedRoute>} />
-//           <Route path="/*" element={<ErrorPage />} />
-//         </Routes>
-//       </Router>
-//     </AuthProvider>);
-// }
 
 export const RouterComponent = () => {
   return (
@@ -42,6 +30,7 @@ export const RouterComponent = () => {
           <Route path={ROUTES.WELCOME} element={<Welcome />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.REDIRECT} element={<RedirectFromSpotify/>} />
+          <Route path={ROUTES.INFO} element={<InfoPage/>}/>
           <Route path={ROUTES.HOME} element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
