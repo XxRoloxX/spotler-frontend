@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${global_styles.black};
     color: white;
   }
+  
 
 
   ::-webkit-scrollbar {
@@ -22,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background-color: rgba(00, 00, 00, 0.5);
+    background-color: rgba(00, 00, 00, 0.0);
   }
 
   ::-webkit-scrollbar-thumb {

@@ -13,7 +13,7 @@ export const Welcome = () => {
         console.log("RUN USEEFFECTS")
         if (code) {
             console.log(code)
-            const result = authorize_with_spotify({ "code": code }).then(result => {
+            authorize_with_spotify({ "code": code }).then(result => {
                 console.log("RESULTS: " + result)
                 window.location.href = ("/#" + ROUTES.HOME)
             }).catch(err => { console.log("ERROR: " + err) })

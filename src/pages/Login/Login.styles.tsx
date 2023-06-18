@@ -15,7 +15,7 @@ export const LoginButton = styled.button`
 export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
     padding: 3rem;
@@ -33,5 +33,9 @@ export const BannerText = styled.div`
 
 export const BannerDescription = styled.div`
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
+    width: 50%;
+    font-size: 1.5rem;
+    font-family: 'Roboto-Medium';
+
 `

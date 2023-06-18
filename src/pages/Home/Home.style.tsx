@@ -2,22 +2,13 @@ import React, { MouseEventHandler } from "react";
 import styled from "styled-components";
 import global_styles from "../../assets/global-paramers.style";
 
-export const TrackInputField = styled.input`
-  width: 60%;
-  border-width:0;
-  border-radius: 2rem;
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  padding: 2rem;
-`
 
 export const MainContainer = styled.div`
     display:flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     margin-top:0;
-    height: 100vh;
-    padding: 3rem;
+    padding: 2rem;
+    height: 90vh;
 `
 export const SearchTrackInfoButton = styled.button`
     border-radius: 1rem;
@@ -34,13 +25,9 @@ export const SearchTrackInfoButton = styled.button`
         color: green;
     }
 `
-export const SearchContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-`
+
+
+
 export const TrackGenresContainer = styled.div`
     margin-top: 5rem;
     row-gap: 1rem;
