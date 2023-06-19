@@ -8,6 +8,6 @@ export const Footer = () => {
 
     return <FooterContainer>
         <Link to={ROUTES.INFO}>Used model</Link>
-        <p>© 2023</p>
+        <p>Wieslaw © 2023</p>
     </FooterContainer>
 }
