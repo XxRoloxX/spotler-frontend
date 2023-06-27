@@ -1,4 +1,5 @@
-const prod = process.env.NODE_ENV === 'production';
+// const prod = process.env.NODE_ENV === 'development';
+const prod = undefined
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
